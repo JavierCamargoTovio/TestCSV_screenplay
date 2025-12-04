@@ -1,2 +1,2 @@
 "Story","Title","Result","Date","Stability","Duration (s)"
-"test csv","Crear usuarios usando datos del CSV","FAILURE","2025-12-03T18:31:58.919238-05:00[America/Bogota]","0.0","5.25"
+"test csv","Crear usuarios usando datos del CSV","SUCCESS","2025-12-04T10:54:31.6940492-05:00[America/Bogota]","0.0","10.67"

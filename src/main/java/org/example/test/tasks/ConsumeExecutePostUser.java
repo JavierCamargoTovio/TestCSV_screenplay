@@ -16,7 +16,7 @@ import static org.example.test.exceptions.AssertionsServices.EXCEPTION_ERROR_CON
 import static org.example.test.models.headers.GetHeaderModel.headersApiKey;
 
 public class ConsumeExecutePostUser implements Task {
-    private static final Logger LOGGER = LoggerFactory.getLogger(ConsumeExecutePostUser.class.getSimpleName());
+
 
     private final String endpointResource;
     private final CreateUserDTO usuario;

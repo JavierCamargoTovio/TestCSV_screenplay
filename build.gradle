@@ -43,7 +43,7 @@ dependencies {
     implementation "net.serenity-bdd:serenity-ensure:${serenityVersion}"
     implementation "net.serenity-bdd:serenity-single-page-report:${serenityVersion}"
     implementation "net.serenity-bdd:serenity-screenplay-rest:$serenityVersion"
-
+    implementation 'com.opencsv:opencsv:5.9'
     implementation "io.rest-assured:json-schema-validator:${jsonSchemaValidator}"
     implementation "org.json:json:${jsonVersion}"
     implementation "com.jayway.jsonpath:json-path:${jsonPathVersion}"
