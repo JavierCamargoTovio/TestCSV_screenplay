@@ -1,0 +1,64 @@
+plugins {
+    id("java")
+    id "net.serenity-bdd.serenity-gradle-plugin" version "3.9.4"
+}
+defaultTasks 'clean','test','aggregate'
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+
+}
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+compileJava.options.encoding = "UTF-8"
+compileTestJava.options.encoding = "UTF-8"
+
+serenity {
+    reports = ["single-page-html"]
+    testRoot = "starter"
+    requirementsDir = "src/test/resources/features"
+}
+
+ext {
+    serenityVersion = '3.9.4'
+    junitVersion = '5.9.1'
+    assertJVersion = '3.22.0'
+    logbackVersion = '1.2.10'
+    slf4jVersion = '2.0.12'
+    jsonSchemaValidator = '5.4.0'
+    jsonVersion = '20231013'
+    jsonPathVersion = '2.9.0'
+
+}
+dependencies {
+
+    implementation "net.serenity-bdd:serenity-core:${serenityVersion}"
+    implementation "net.serenity-bdd:serenity-junit:${serenityVersion}"
+    testImplementation "net.serenity-bdd:serenity-cucumber:${serenityVersion}"
+    implementation "net.serenity-bdd:serenity-screenplay:${serenityVersion}"
+    implementation "net.serenity-bdd:serenity-ensure:${serenityVersion}"
+    implementation "net.serenity-bdd:serenity-single-page-report:${serenityVersion}"
+    implementation "net.serenity-bdd:serenity-screenplay-rest:$serenityVersion"
+
+    implementation "io.rest-assured:json-schema-validator:${jsonSchemaValidator}"
+    implementation "org.json:json:${jsonVersion}"
+    implementation "com.jayway.jsonpath:json-path:${jsonPathVersion}"
+
+    implementation "org.slf4j:slf4j-api: ${slf4jVersion}"
+    testImplementation "org.slf4j:slf4j-simple:${slf4jVersion}"//nos sirve para ver los letras de serenity y passed
+
+    testImplementation "org.junit.jupiter:junit-jupiter-api:${junitVersion}"
+    testImplementation "org.junit.jupiter:junit-jupiter-engine:${junitVersion}"
+
+    compileOnly fileTree(dir: 'libs', include: '*.jar')
+
+}
+
+
+test {
+    useJUnit()
+}
